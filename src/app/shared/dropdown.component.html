@@ -1,0 +1,9 @@
+<select
+  class="form-select"
+  [(ngModel)]="selectedItem"
+  (change)="selectionChanged()"
+>
+  <option *ngFor="let item of items" [ngValue]="item">
+    {{ item.productName }}
+  </option>
+</select>

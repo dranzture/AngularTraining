@@ -1,0 +1,40 @@
+<div class="card" *ngIf="product">
+  <div class="card-header">
+    <h4>Product Detail: {{ product.productName }}</h4>
+    
+  </div>
+  <div class="card-body" *ngIf="product">
+    <div class="row">
+      <div class="col-md-2">
+        <p class="fw-bold">Name:</p>
+        <p class="fw-bold">Code:</p>
+        <p class="fw-bold">Description:</p>
+        <p class="fw-bold">Price:</p>
+        <p class="fw-bold">Star:</p>
+      </div>
+      <div class="col-md-4">
+        <p>{{ product.productName }}</p>
+        <p>{{ product.productCode }}</p>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price }}</p>
+        <p><pm-star [rating]="product.starRating"></pm-star></p>
+      </div>
+      <div class="col-md-6">
+        <img
+          [src]="product.imageUrl"
+          [title]="product.productName"
+          [style.width.px]="150"
+          [style.margin-left.px]="150"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary" (click)="onBack()">
+      <span>
+        <i class="fa fa-arrow-left"></i>
+      </span>
+      Back
+    </button>
+  </div>
+</div>
